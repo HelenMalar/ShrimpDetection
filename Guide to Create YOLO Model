@@ -1,0 +1,13 @@
+Steps to be followed in creating your YOLO model:
+1. Collect the data(Images of Shrimps)
+2. Label them using labelImg (a software to manually label the objects) and Save them in YOLO Format
+3. Organize the folder into train, valid images and train, valid YOLO-Format text(Labels)
+4. Create a .yaml file with
+      path: path_to_dataset_folder
+      train: path_to_train_imgs
+      val: path_to_val_imgs
+      names:
+        0: your_labeled_object_name // here- shrimp
+5. In CMD from the dataset folder run
+      yolo task=detect mode=train model=yolov8n.pt data=shrimp.yaml epochs=50 imgsz=640
+🎉🎉Now your model is all set!!
